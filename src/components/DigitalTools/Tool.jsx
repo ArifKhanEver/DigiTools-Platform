@@ -5,11 +5,17 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
     const [buyBtnState, setBuyBtnState] = useState(false)
 
     const handleCard = ()=> {
-        setCartCount(cartCount + 1)
         setBuyBtnState(true)
-
+        
+        const isFound = selectedTools.find(item=> item.id === tool.id)
+        
+        if(isFound){
+            toast.error('This item is already in the Cart')
+            return
+        }
         
         setSelectedTools([...selectedTools, tool])
+        setCartCount(cartCount + 1)
         toast(`${tool.name} has been added to your cart`)
 
     }
