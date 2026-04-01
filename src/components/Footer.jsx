@@ -4,7 +4,7 @@ import logo from '../assets/DigiToolswhite.png'
 const Footer = () => {
     return (
         <div className='bg-[#101727]'>
-            <div className='max-w-[1200px] mx-auto pt-[120px] pb-[30px]'>
+            <div className='max-w-[90%] md:max-w-[1200px] mx-auto pt-[60px] md:pt-[120px] pb-[30px]'>
 
                 <footer className="footer bg-[#101727] sm:footer-horizontal text-base-content text-white">
                     <div className='max-w-[300px]'>
@@ -73,9 +73,9 @@ const Footer = () => {
                 </footer>
                 <div className="divider border-b-1 border-[#ffffff6e]"></div>
                 
-                <div className='text-white flex justify-between'>
+                <div className='text-white flex flex-col md:flex-row gap-3 justify-between'>
                     <p className='text-[#ffffffb6]'>© 2026 Digitools. All rights reserved.</p>
-                    <ul className='flex gap-4 text-[#ffffffb6]'>
+                    <ul className='flex gap-4 text-[13px] md:text-md text-[#ffffffb6]'>
                         <li><a href="">Privacy Policy</a></li>
                         <li><a href="">Terms of Service</a></li>
                         <li><a href="">Cookies</a></li>

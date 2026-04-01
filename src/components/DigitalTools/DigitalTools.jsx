@@ -15,12 +15,12 @@ const DigitalTools = ({toolsData, cartCount, setCartCount}) => {
 
     return (
         <div className='bg-[#ffffff]'>
-            <div className='max-w-[1200px] mx-auto py-[120px]'>
-                <h2 className='text-5xl font-extrabold text-center mb-4'>
+            <div className='max-w-[90%] md:max-w-[1200px] mx-auto py-14 md:py-[120px]'>
+                <h2 className='text-3xl md:text-5xl font-extrabold text-center mb-2'>
                     Premium Digital Tools
                 </h2>
-                <p className='text-center mb-10'>
-                    Choose from our curated collection of premium digital products designed <br></br>to boost your productivity and creativity.
+                <p className='text-center mb-10 max-w-[500px] mx-auto'>
+                    Choose from our curated collection of premium digital products designed to boost your productivity and creativity.
                 </p>
 
                 <div className="toggleBtns flex justify-center mb-10">

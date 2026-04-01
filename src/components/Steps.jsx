@@ -6,11 +6,11 @@ import rocket from '../assets/rocket.png'
 const Steps = () => {
     return (
         <div className='bg-[#F1f1f1]'>
-            <div className='max-w-[1200px] mx-auto py-[120px]'>
-                <h2 className='text-5xl font-extrabold text-center mb-4'>
+            <div className='max-w-[90%] md:max-w-[1200px] mx-auto py-14 md:py-[120px]'>
+                <h2 className='text-3xl md:text-5xl font-extrabold text-center mb-4'>
                     Get Started in 3 Steps
                 </h2>
-                <p className='text-center mb-10'>
+                <p className='text-center mb-10 max-w-[500px] mx-auto'>
                     Start using premium digital tools in minutes, not hours.
                 </p>
                 <div className="steps flex flex-col md:flex-row gap-7">

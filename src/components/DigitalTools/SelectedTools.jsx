@@ -34,8 +34,8 @@ const SelectedTools = ({setCartCount, selectedTools, setSelectedTools}) => {
                                         <img src={tool.icon} alt="Tool icon" />
                                     </div>
                                     <div>
-                                        <h5 className='text-[20px] font-semibold'>{tool.name}</h5>
-                                        <p className='font-medium'>$ {tool.price}</p>
+                                        <h5 className='text-[16px] md:text-[20px] font-semibold'>{tool.name}</h5>
+                                        <p className='font-medium text-[18px]'>$ {tool.price}</p>
                                     </div>
                                 </div>
                                 <div>

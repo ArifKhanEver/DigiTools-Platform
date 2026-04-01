@@ -16,14 +16,14 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card md:w-96 bg-base-100 shadow-sm">
                 <div className="card-body">
                     <div className='flex justify-end items-center'>
-                        <span className={`badge badge-l rounded-full badge-${tool.tag == "Exclusive"? "secondary": tool.tag =="Top Pick"? "info":tool.tag =="Essential"? "accent":"warning"} text-white inline-block`}>{tool.tag}</span>
+                        <span className={`badge badge-l rounded-full badge-${tool.tag == "Exclusive"? "secondary": tool.tag =="Top Pick"? "info":tool.tag =="Essential"? "accent":"warning"} text-gray-300 inline-block`}>{tool.tag}</span>
                     </div>
 
-                    <div className="flex flex-col justify-between space-y-4">
-                        <div className='w-15 h-15 flex items-center justify-center border border-gray-300 rounded-full p-3'>
+                    <div className="flex flex-col justify-between space-y-2 md:space-y-4">
+                        <div className='w-12 h-12 md:w-15 md:h-15 flex items-center justify-center border border-gray-300 rounded-full p-3'>
                             <img src={tool.icon} alt="Tool icon" />
                         </div>
                         <h2 className="text-2xl font-bold">{tool.name}</h2>
@@ -33,7 +33,7 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
                     <ul className=" flex flex-col gap-2 text-xs">
                         {
                             tool.features.map((feature, ind)=>
-                                    <li key={ind}>
+                                    <li key={ind} className='text-[1rem]'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                                         <span>{feature}</span>
                                     </li>
