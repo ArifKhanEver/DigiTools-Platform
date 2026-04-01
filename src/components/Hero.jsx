@@ -5,7 +5,7 @@ import playBtn from '../assets/Play.png'
 
 const Hero = () => {
     return (
-        <div className='max-w-[90%] md:max-w-[1200px] mx-auto flex flex-col md:flex-row justify-center items-center py-[60px]'>
+        <div className='max-w-[90%] md:max-w-[1200px] mx-auto flex flex-col md:flex-row justify-center items-center py-[60px] space-y-8'>
             <div className="text space-y-4">
                 <div className='inline-block bg-[#E1E7FF] px-5 py-2 rounded-full'>
                     <div className='flex items-center gap-1'><img src={ai} alt="Ai tool"/><span> New: AI-Powered Tools Available</span>
