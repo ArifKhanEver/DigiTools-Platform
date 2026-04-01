@@ -21,7 +21,9 @@ const Navbar = ({cartCount}) => {
                         <li><a>FAQ</a></li>
                     </ul>
                     </div>
-                    <a><img src={logo} alt="Digitools logo" /></a>
+                    <div className='w-25 md:w-50'>
+                        <a><img src={logo} alt="Digitools logo" /></a>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold">
@@ -33,7 +35,7 @@ const Navbar = ({cartCount}) => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle -mr-4 md:mr-0">
                         <div className="indicator">
                             <img src={cart} alt="cart icon" />
                             <span className="badge badge-sm indicator-item">{cartCount}</span>
