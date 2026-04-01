@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+
+const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) => {
+    const [buyBtnState, setBuyBtnState] = useState(false)
+
+    const handleCard = ()=> {
+        setCartCount(cartCount + 1)
+        setBuyBtnState(true)
+
+        
+        setSelectedTools([...selectedTools, tool])
+        toast(`${tool.name} has been added to your cart`)
+
+    }
+
+    return (
+        <div>
+            <div className="card w-96 bg-base-100 shadow-sm">
+                <div className="card-body">
+                    <div className='flex justify-end items-center'>
+                        <span className={`badge badge-l rounded-full badge-${tool.tag == "Exclusive"? "secondary": tool.tag =="Top Pick"? "info":tool.tag =="Essential"? "accent":"warning"} text-white inline-block`}>{tool.tag}</span>
+                    </div>
+
+                    <div className="flex flex-col justify-between space-y-4">
+                        <div className='w-15 h-15 flex items-center justify-center border border-gray-300 rounded-full p-3'>
+                            <img src={tool.icon} alt="Tool icon" />
+                        </div>
+                        <h2 className="text-2xl font-bold">{tool.name}</h2>
+                        <p className='text-[#627382]'>{tool.description}</p>
+                        <p className="text-[18px]"><span className='text-2xl font-bold'>${tool.price}</span>/{tool.period}</p>
+                    </div>
+                    <ul className=" flex flex-col gap-2 text-xs">
+                        {
+                            tool.features.map((feature, ind)=>
+                                    <li key={ind}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        <span>{feature}</span>
+                                    </li>
+                            )
+                        }
+                    </ul>
+                    <div className="mt-6">
+                        <button onClick={handleCard} className={`btn ${buyBtnState? "bg-gray-300 text-black": "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"}  rounded-full btn-block hover:from-[#9514FA] hover:to-[#4F39F6] hover:scale-[1.01] pointer`} disabled={buyBtnState}>
+                            {buyBtnState? "Purchased":"Buy Now"}
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Tool;

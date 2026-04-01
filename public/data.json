@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Luxury Timepiece Catalog",
+    "description": "High-resolution product database and imagery for premium watch retailers and curators.",
+    "price": 45,
+    "period": "one-time",
+    "tag": "Exclusive",
+    "tagType": "best",
+    "features": [
+      "4K macro photography",
+      "Detailed technical specs",
+      "Brand history snippets",
+      "SEO-ready descriptions"
+    ],
+    "icon": "https://static.vecteezy.com/system/resources/previews/021/353/217/non_2x/watch-symbol-illustration-time-clock-icon-png.png"
+  },
+  {
+    "id": 2,
+    "name": "Smart Building Dashboard",
+    "description": "Real-time monitoring interface for water management and energy efficiency analytics.",
+    "price": 120,
+    "period": "monthly",
+    "tag": "Enterprise",
+    "tagType": "popular",
+    "features": [
+      "Leak detection alerts",
+      "Consumption heatmaps",
+      "Remote valve control",
+      "API integration"
+    ],
+    "icon": "https://cdn-icons-png.flaticon.com/512/6821/6821040.png"
+  },
+  {
+    "id": 3,
+    "name": "Full-Stack Dev Starter",
+    "description": "A robust boilerplate for MERN applications with pre-configured authentication and UI.",
+    "price": 59,
+    "period": "one-time",
+    "tag": "Top Pick",
+    "tagType": "best",
+    "features": [
+      "React & Tailwind setup",
+      "Node/Express backend",
+      "JWT Authentication",
+      "MongoDB schema templates"
+    ],
+    "icon": "https://cdn-icons-png.flaticon.com/512/11743/11743804.png"
+  },
+  {
+    "id": 4,
+    "name": "Cricket Analytics Engine",
+    "description": "Advanced data tool for team selection, player statistics, and performance forecasting.",
+    "price": 29,
+    "period": "monthly",
+    "tag": "New Tool",
+    "tagType": "new",
+    "features": [
+      "Player performance tracking",
+      "Strike rate analytics",
+      "Team balance simulator",
+      "Export to JSON/CSV"
+    ],
+    "icon": "https://cdn-icons-png.flaticon.com/512/2160/2160064.png"
+  },
+  {
+    "id": 5,
+    "name": "E-Commerce Content Suite",
+    "description": "Bulk description generator for footwear and apparel brands using targeted keywords.",
+    "price": 35,
+    "period": "monthly",
+    "tag": "Essential",
+    "tagType": "popular",
+    "features": [
+      "Footwear size guides",
+      "Material durability tags",
+      "Automated meta tags",
+      "Multi-category support"
+    ],
+    "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/inventory-icon-svg-download-png-1751587.png"
+  },
+  {
+    "id": 6,
+    "name": "Portfolio Showcase Kit",
+    "description": "Elegant, minimalist templates designed specifically for developers and agency owners.",
+    "price": 19,
+    "period": "one-time",
+    "tag": "Modern",
+    "tagType": "new",
+    "features": [
+      "Animated scroll effects",
+      "Project case study blocks",
+      "Responsive Elementor kits",
+      "One-click demo import"
+    ],
+    "icon": "https://cdn-icons-png.freepik.com/256/8596/8596275.png?semt=ais_white_label"
+  }
+]
