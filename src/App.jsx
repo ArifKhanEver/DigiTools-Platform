@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import DigitalTools from './components/DigitalTools/DigitalTools'
 
 function App() {
-  const toolsData = fetch('/public/data.json').then(res=>res.json())
+  const toolsData = fetch('/data.json').then(res=>res.json())
 
   const [cartCount, setCartCount] = useState(0)
 
