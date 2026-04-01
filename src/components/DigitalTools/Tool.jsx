@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) => {
     const [buyBtnState, setBuyBtnState] = useState(false)
 
+    useEffect(()=>{selectedTools.map(item=>item.id == tool.id && setBuyBtnState(true))}, [selectedTools, buyBtnState])
+
     const handleCard = ()=> {
-        setBuyBtnState(true)
         
         const isFound = selectedTools.find(item=> item.id === tool.id)
         
@@ -16,6 +17,7 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
         
         setSelectedTools([...selectedTools, tool])
         setCartCount(cartCount + 1)
+        setBuyBtnState(true)
         toast(`${tool.name} has been added to your cart`)
 
     }

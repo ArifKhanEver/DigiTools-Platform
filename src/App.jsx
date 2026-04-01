@@ -9,8 +9,8 @@ import Workflow from './components/Workflow'
 import Footer from './components/Footer'
 import DigitalTools from './components/DigitalTools/DigitalTools'
 
+const toolsData = fetch('/data.json').then(res=>res.json())
 function App() {
-  const toolsData = fetch('/data.json').then(res=>res.json())
 
   const [cartCount, setCartCount] = useState(0)
 
