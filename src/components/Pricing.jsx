@@ -13,7 +13,7 @@ const Pricing = () => {
 
                 <div className='flex flex-col md:flex-row justify-between gap-10 md:gap-4'>
 
-                    <div className="card rounded-2xl w-96 bg-base-100 shadow-sm">
+                    <div className="card rounded-2xl w-96 bg-[#fff] shadow-sm">
                         <div className="card-body flex flex-col justify-between">
                             <div className="">
                             <h2 className="text-3xl font-bold">Starter</h2>
@@ -45,8 +45,8 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    <div className="card rounded-2xl w-96 bg-base-100 shadow-sm bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">
-                        <span className="badge badge-xl bg-amber-200 mx-auto -mt-4 text-[14px] font-medium p-3 rounded-full">Most Popular</span>
+                    <div className="card rounded-2xl w-96 bg-base-100 shadow-sm bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-[#fff]">
+                        <span className="badge badge-xl bg-amber-200 mx-auto -mt-4 text-[14px] font-medium p-3 rounded-full text-[#000]">Most Popular</span>
                         <div className="card-body flex flex-col justify-between">
                             <div className="">
                                 <h2 className="text-3xl font-bold">Pro</h2>
@@ -86,7 +86,7 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    <div className="card rounded-2xl w-96 bg-base-100 shadow-sm">
+                    <div className="card rounded-2xl w-96 bg-[#fff] shadow-sm">
                         <div className="card-body flex flex-col justify-between">
                             <div>
                                 <h2 className="text-3xl font-bold">Enterprise</h2>

@@ -8,7 +8,7 @@ A modern and minimalist web application designed to provide a seamless user expe
 
 This project is built with a focus on performance and clean code using:
 
-* **Frontend:** React.js, Tailwind CSS
+* **Frontend:**  Tailwind CSS, React.js, React-Toastify (NPM Package)
 * **State Management:** Context API / Hooks
 * **Data Handling:** JSON, Fetch API
 

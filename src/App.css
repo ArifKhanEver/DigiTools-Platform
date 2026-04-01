@@ -2,3 +2,16 @@ body {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
 }
+
+.badge-secondary {
+  background-color: rgb(235, 44, 225);
+}
+.badge-info {
+  background-color: rgb(44, 149, 235);
+}
+.badge-accent {
+  background-color: rgb(17, 199, 169);
+}
+.badge-warning {
+  background-color: rgb(235, 168, 44);
+}

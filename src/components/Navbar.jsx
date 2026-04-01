@@ -4,8 +4,8 @@ import cart from '../assets/shopping-cart.png'
 
 const Navbar = ({cartCount}) => {
     return (
-        <div className='shadow-sm sticky top-0 z-10 bg-white'>
-            <div className=" max-w-[1200px] mx-auto navbar bg-base-100 py-4">
+        <div className='shadow-sm sticky top-0 z-10 bg-[#fff]'>
+            <div className=" max-w-[1200px] mx-auto navbar bg-[#fff] py-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Navbar = ({cartCount}) => {
                      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle -mr-4 md:mr-0">
                         <div className="indicator">
                             <img src={cart} alt="cart icon" />
-                            <span className="badge badge-sm indicator-item">{cartCount}</span>
+                            <span className="badge badge-sm bg-[#fff] indicator-item text-[#000]">{cartCount}</span>
                         </div>
                     </div>
                     <button className="btn btn-ghost">Login</button>

@@ -12,7 +12,7 @@ const Workflow = () => {
                 </p>
 
                 <div className='flex justify-center gap-4 mb-4'>
-                    <button className="btn rounded-full">
+                    <button className="btn bg-[#fff] rounded-full">
                         Explore Products
                     </button>
                     <button className="btn btn-outline rounded-full">

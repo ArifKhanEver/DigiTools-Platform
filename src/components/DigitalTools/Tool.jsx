@@ -22,10 +22,10 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
 
     return (
         <div>
-            <div className="card md:w-96 bg-base-100 shadow-sm">
+            <div className="card md:w-96 bg-[#fff] shadow-sm">
                 <div className="card-body">
                     <div className='flex justify-end items-center'>
-                        <span className={`badge badge-l rounded-full badge-${tool.tag == "Exclusive"? "secondary": tool.tag =="Top Pick"? "info":tool.tag =="Essential"? "accent":"warning"} text-gray-300 inline-block`}>{tool.tag}</span>
+                        <span className={`badge badge-l rounded-full badge-${tool.tag == "Exclusive"? "secondary": tool.tag =="Top Pick"? "info":tool.tag =="Essential"? "accent":"warning"} text-[#fff] inline-block`}>{tool.tag}</span>
                     </div>
 
                     <div className="flex flex-col justify-between space-y-2 md:space-y-4">
@@ -48,7 +48,7 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
                     </ul>
                     <div className="mt-6">
                         <button onClick={handleCard} className={`btn ${buyBtnState? "bg-gray-300 text-black": "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"}  rounded-full btn-block hover:from-[#9514FA] hover:to-[#4F39F6] hover:scale-[1.01] pointer`} disabled={buyBtnState}>
-                            {buyBtnState? "Purchased":"Buy Now"}
+                            {buyBtnState? "Added to Cart":"Buy Now"}
                         </button>
                         
                     </div>
