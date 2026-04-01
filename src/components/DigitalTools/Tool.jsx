@@ -9,7 +9,6 @@ const Tool = ({tool, cartCount, setCartCount, selectedTools, setSelectedTools}) 
     const handleCard = ()=> {
         
         const isFound = selectedTools.find(item=> item.id === tool.id)
-        
         if(isFound){
             toast.error('This item is already in the Cart')
             return
