@@ -1,27 +1,59 @@
-# 🚀 Digital Tools Buying Website
+# 🚀 DigiTools — Premium Digital Tools Platform
 
-A modern and minimalist web application designed to provide a seamless user experience. This project focuses on buying different digital tools in a very simple way.
+A modern, responsive, and minimalist web application designed to provide a seamless digital marketplace experience. DigiTools allows creators, developers, and businesses to explore, filter, and purchase premium digital tools with ease.
 
 ---
 
 ## 🛠️ Technologies Used
 
-This project is built with a focus on performance and clean code using:
-
-* **Frontend:**  Tailwind CSS, React.js, React-Toastify (NPM Package)
-* **State Management:** Context API / Hooks
-* **Data Handling:** JSON, Fetch API
+* **Frontend:** React 19, Tailwind CSS v4, DaisyUI 5, React-Toastify
+* **Build Tool:** Vite
+* **State Management:** React Hooks (`useState`, `useMemo`, `use`)
+* **Icons & Assets:** Optimized modern SVG and raster assets
+* **Design & Typography:** Google Font (Manrope), Custom Linear Gradients, Glassmorphism navbar
 
 ---
 
 ## ✨ Key Features
 
-1.  **Responsive UI/UX:** A fully responsive design that works perfectly across mobile, tablet, and desktop devices.
-2.  **Dynamic Data Filtering:** Users can interact with real-time data efficiently (e.g., adding to cart).
-3.  **Modern Component Architecture:** Built using reusable React components for better scalability and maintenance.
+1. **Dynamic Catalog & Real-time Search:**
+   - Instant search across product names and descriptions.
+   - Category tag filters (Exclusive, Top Pick, Essential, Enterprise, etc.).
+   - Responsive empty-state screens with one-click filter resets.
+
+2. **Interactive Cart & State Management:**
+   - Synchronized cart counter across the navigation bar and catalog.
+   - Prevent duplicate additions with reactive "Added to Cart" state.
+   - Dynamic total calculation, instant removal, cart clearing, and simulated checkout flow.
+
+3. **Responsive UI & Modern Aesthetics:**
+   - Fully optimized layouts for mobile, tablet, and desktop screens.
+   - Smooth anchor navigation between Hero, Products, Features, Pricing, and Workflow sections.
+   - Refactored pricing cards with plan selection feedback.
+
+4. **Footer & Community Engagement:**
+   - Working newsletter subscription validation with toast feedback.
+   - Social links with accessible tags and legal modals.
 
 ---
 
-## 🚀 See the Live link:
-live site: https://digitoolsfordigitalworkflow.netlify.app/
+## 💻 Getting Started Locally
 
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Run the development server
+npm run dev
+
+# 3. Build for production
+npm run build
+
+# 4. Run ESLint checks
+npm run lint
+```
+
+---
+
+## 🌐 Live Demo
+* **Live Site:** [digitoolsfordigitalworkflow.netlify.app](https://digitoolsfordigitalworkflow.netlify.app/)
