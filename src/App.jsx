@@ -1,35 +1,60 @@
-import { Suspense, useState } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Counter from './components/Counter'
-import Steps from './components/Steps'
-import Pricing from './components/Pricing'
-import Workflow from './components/Workflow'
-import Footer from './components/Footer'
-import DigitalTools from './components/DigitalTools/DigitalTools'
+import { Suspense, useState } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Counter from './components/Counter';
+import Steps from './components/Steps';
+import Pricing from './components/Pricing';
+import Workflow from './components/Workflow';
+import Footer from './components/Footer';
+import DigitalTools from './components/DigitalTools/DigitalTools';
 
-const toolsData = fetch('/data.json').then(res=>res.json())
+const toolsData = fetch('/data.json').then(res => res.json());
+
 function App() {
+  const [selectedTools, setSelectedTools] = useState([]);
+  const [activeTab, setActiveTab] = useState('Products');
 
-  const [cartCount, setCartCount] = useState(0)
+  const handleCartClick = () => {
+    setActiveTab('Cart');
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <Navbar cartCount = {cartCount}></Navbar>
-      <Hero></Hero>
-      <Counter></Counter>
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans">
+      <Navbar
+        cartCount={selectedTools.length}
+        onCartClick={handleCartClick}
+      />
+      <main className="flex-grow">
+        <Hero />
+        <Counter />
 
-      <Suspense fallback={<span className="loading loading-dots loading-lg"></span>}>
-        <DigitalTools toolsData={toolsData} cartCount={cartCount} setCartCount={setCartCount}></DigitalTools>
-      </Suspense>
+        <Suspense fallback={
+          <div className="flex justify-center items-center py-24">
+            <span className="loading loading-dots loading-lg text-[#4F39F6]"></span>
+          </div>
+        }>
+          <DigitalTools
+            toolsData={toolsData}
+            selectedTools={selectedTools}
+            setSelectedTools={setSelectedTools}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        </Suspense>
 
-      <Steps></Steps>
-      <Pricing></Pricing>
-      <Workflow></Workflow>
-      <Footer></Footer>
-    </>
-  )
+        <Steps />
+        <Pricing />
+        <Workflow />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
+
