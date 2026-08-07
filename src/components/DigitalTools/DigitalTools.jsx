@@ -7,6 +7,7 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
     const tools = useMemo(() => rawTools || [], [rawTools]);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
+    const [sortBy, setSortBy] = useState('featured');
 
     const handleToggle = (tabName) => {
         if (setActiveTab) {
@@ -20,19 +21,29 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
     }, [tools]);
 
     const filteredTools = useMemo(() => {
-        return tools.filter(tool => {
+        let result = tools.filter(tool => {
             const matchesCategory = selectedCategory === 'All' || tool.tag === selectedCategory;
             const matchesSearch =
                 tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 (tool.description && tool.description.toLowerCase().includes(searchQuery.toLowerCase()));
             return matchesCategory && matchesSearch;
         });
-    }, [tools, selectedCategory, searchQuery]);
 
+        if (sortBy === 'price-asc') {
+            result = [...result].sort((a, b) => a.price - b.price);
+        } else if (sortBy === 'price-desc') {
+            result = [...result].sort((a, b) => b.price - a.price);
+        } else if (sortBy === 'name-asc') {
+            result = [...result].sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        return result;
+    }, [tools, selectedCategory, searchQuery, sortBy]);
 
     const handleResetFilters = () => {
         setSearchQuery('');
         setSelectedCategory('All');
+        setSortBy('featured');
     };
 
     return (
@@ -94,32 +105,51 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
                                 ))}
                             </div>
 
-                            {/* Search Box */}
-                            <div className="w-full md:w-72 relative">
-                                <input
-                                    type="text"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                    placeholder="Search tools & kits..."
-                                    className="input input-bordered input-sm md:input-md w-full rounded-full pl-10 pr-4 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#4F39F6] border-gray-200 text-sm"
-                                />
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                                {searchQuery && (
-                                    <button
-                                        onClick={() => setSearchQuery('')}
-                                        className="btn btn-ghost btn-circle btn-xs absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700"
+                            {/* Search and Sort Controls */}
+                            <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+                                {/* Sort Dropdown */}
+                                <div className="w-full sm:w-auto">
+                                    <select
+                                        value={sortBy}
+                                        onChange={(e) => setSortBy(e.target.value)}
+                                        aria-label="Sort products by"
+                                        className="select select-bordered select-sm md:select-md rounded-full bg-gray-50 focus:bg-white text-xs md:text-sm font-medium border-gray-200 focus:border-[#4F39F6] w-full sm:w-auto"
                                     >
-                                        ✕
-                                    </button>
-                                )}
+                                        <option value="featured">✨ Featured</option>
+                                        <option value="price-asc">💵 Price: Low to High</option>
+                                        <option value="price-desc">💎 Price: High to Low</option>
+                                        <option value="name-asc">🔤 Name: A to Z</option>
+                                    </select>
+                                </div>
+
+                                {/* Search Box */}
+                                <div className="w-full sm:w-64 relative">
+                                    <input
+                                        type="text"
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        placeholder="Search tools & kits..."
+                                        className="input input-bordered input-sm md:input-md w-full rounded-full pl-10 pr-8 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#4F39F6] border-gray-200 text-sm"
+                                    />
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-4 w-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                    {searchQuery && (
+                                        <button
+                                            onClick={() => setSearchQuery('')}
+                                            aria-label="Clear search input"
+                                            className="btn btn-ghost btn-circle btn-xs absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700"
+                                        >
+                                            ✕
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
 
