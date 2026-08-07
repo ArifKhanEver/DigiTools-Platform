@@ -48,7 +48,10 @@ const Pricing = () => {
                                 </li>
                             </ul>
                             <div className="mt-8">
-                                <button onClick={() => handleSelectPlan('Starter')} className="btn btn-block bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-full border-none transition-all">
+                                <button
+                                    onClick={() => handleSelectPlan('Starter')}
+                                    className="btn btn-block bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-full border-none transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                                >
                                     Get Started Free
                                 </button>
                             </div>
@@ -56,7 +59,7 @@ const Pricing = () => {
                     </div>
 
                     {/* Pro Card (Highlighted) */}
-                    <div className="card rounded-2xl w-full max-w-sm mx-auto lg:max-w-none lg:w-1/3 shadow-xl bg-linear-to-b from-[#4F39F6] to-[#9514FA] text-white relative transform lg:-translate-y-2 hover:scale-[1.02] transition-all duration-300">
+                    <div className="card rounded-2xl w-full max-w-sm mx-auto lg:max-w-none lg:w-1/3 shadow-xl bg-linear-to-b from-[#4F39F6] to-[#9514FA] text-white relative transform lg:-translate-y-2 hover:scale-[1.03] transition-all duration-300">
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                             <span className="badge bg-amber-300 text-gray-900 font-bold px-4 py-3 shadow-md rounded-full text-xs uppercase tracking-wider border-none">
                                 Most Popular
@@ -98,7 +101,10 @@ const Pricing = () => {
                                 </li>
                             </ul>
                             <div className="mt-8">
-                                <button onClick={() => handleSelectPlan('Pro')} className="btn btn-block bg-white hover:bg-gray-100 text-[#4F39F6] font-bold rounded-full border-none shadow-md transition-all">
+                                <button
+                                    onClick={() => handleSelectPlan('Pro')}
+                                    className="btn btn-block bg-white hover:bg-gray-100 text-[#4F39F6] font-bold rounded-full border-none shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                                >
                                     Start Pro Trial
                                 </button>
                             </div>
@@ -143,7 +149,10 @@ const Pricing = () => {
                                 </li>
                             </ul>
                             <div className="mt-8">
-                                <button onClick={() => handleSelectPlan('Enterprise')} className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold rounded-full border-none transition-all">
+                                <button
+                                    onClick={() => handleSelectPlan('Enterprise')}
+                                    className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold rounded-full border-none shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                                >
                                     Get Enterprise
                                 </button>
                             </div>

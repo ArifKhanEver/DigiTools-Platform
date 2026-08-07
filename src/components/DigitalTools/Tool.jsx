@@ -30,22 +30,28 @@ const Tool = ({ tool, selectedTools, setSelectedTools }) => {
     };
 
     return (
-        <div className="card w-full bg-white shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl border border-gray-100 flex flex-col justify-between">
+        <div className="card w-full bg-white shadow-md hover:shadow-2xl transition-all duration-300 rounded-2xl border border-gray-100 flex flex-col justify-between hover:-translate-y-1 group">
             <div className="card-body p-6 flex flex-col justify-between flex-1">
                 <div>
                     <div className='flex justify-between items-center mb-3'>
-                        <div className='w-12 h-12 flex items-center justify-center border border-gray-200 rounded-full p-2.5 bg-gray-50/50'>
-                            <img src={tool.icon} alt={tool.name} className='w-full h-full object-contain' />
+                        <div className='w-12 h-12 flex items-center justify-center border border-gray-200 rounded-2xl p-2.5 bg-gray-50/70 group-hover:bg-[#E1E7FF] transition-colors'>
+                            <img src={tool.icon} alt={`${tool.name} icon`} className='w-full h-full object-contain' />
                         </div>
-                        <span className={`badge rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-wider border-none ${getTagColor(tool.tag)}`}>
+                        <span className={`badge rounded-full px-3 py-2 text-xs font-bold uppercase tracking-wider border-none shadow-xs ${getTagColor(tool.tag)}`}>
                             {tool.tag}
                         </span>
                     </div>
 
                     <div className="space-y-2 mt-2">
-                        <h3 className="text-xl font-bold text-gray-800">{tool.name}</h3>
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#4F39F6] transition-colors">{tool.name}</h3>
+                            <div className="flex items-center text-amber-400 text-xs font-bold gap-0.5">
+                                <span>★</span>
+                                <span className="text-gray-600 font-semibold">4.9</span>
+                            </div>
+                        </div>
                         <p className='text-gray-500 text-sm min-h-[40px] leading-relaxed'>{tool.description}</p>
-                        <div className="pt-2">
+                        <div className="pt-2 flex items-baseline gap-1.5">
                             <span className='text-3xl font-extrabold text-gray-900'>${tool.price}</span>
                             <span className='text-gray-500 text-sm font-medium'>/{tool.period}</span>
                         </div>
@@ -69,10 +75,11 @@ const Tool = ({ tool, selectedTools, setSelectedTools }) => {
                     <button
                         onClick={handleAddToCart}
                         disabled={isAdded}
+                        aria-label={isAdded ? `${tool.name} is already in cart` : `Add ${tool.name} to cart`}
                         className={`btn btn-block rounded-full font-semibold transition-all duration-200 ${
                             isAdded
-                                ? "bg-gray-200 text-gray-500 cursor-not-allowed border-none"
-                                : "bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white border-none shadow-md hover:shadow-lg cursor-pointer"
+                                ? "bg-gray-100 text-gray-400 cursor-not-allowed border-none shadow-none"
+                                : "bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white border-none shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
                         }`}
                     >
                         {isAdded ? "✓ Added to Cart" : "Buy Now"}
