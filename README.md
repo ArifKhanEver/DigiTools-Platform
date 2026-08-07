@@ -25,24 +25,28 @@ A modern, high-performance, and responsive web application designed to provide a
 
 ## ✨ Key Features & Architectural Highlights
 
-1. **⚡ Dynamic Catalog & Instant Search:**
+1. **⚡ Dynamic Catalog, Instant Search & Sorting:**
    - Real-time client-side search across tool titles and descriptive metadata.
    - Dynamic category tag filtering (`All`, `Exclusive`, `Top Pick`, `Essential`, `Enterprise`).
-   - Graceful zero-state views with single-click filter resets.
+   - Multiple sorting modes (`✨ Featured`, `💵 Price: Low to High`, `💎 Price: High to Low`, `🔤 Name: A to Z`).
+   - Graceful zero-state views with single-click filter resets and live result counters.
 
-2. **🛒 Reactive Cart & State Synchronization:**
+2. **🛒 Reactive Cart, State Synchronization & Coupons:**
    - Bidirectional state syncing between Header badge indicator and Cart view.
-   - Instant subtotal calculation with automatic duplicate item prevention.
+   - Integrated promo coupon discount system (`DIGI20` for 20% off, `WELCOME10` for $10 off).
+   - Instant subtotal/total calculation with automatic duplicate item prevention.
    - Interactive checkout simulation with contextual feedback.
 
-3. **🎨 Modern Aesthetics & Micro-interactions:**
+3. **💬 Interactive FAQ & Onboarding:**
+   - Smooth accordion collapse components for common questions regarding commercial licensing, updates, and refunds.
+   - Clear 3-step feature roadmap for new users.
+
+4. **🎨 Modern Aesthetics, Micro-interactions & A11y:**
    - Curated linear gradient palettes (`#4F39F6` to `#9514FA`).
+   - Floating `BackToTop` button with window scroll triggers.
    - Subtle card hover elevations, smooth anchor scrolling, and spring transitions.
    - Accessible modal dialogues for Privacy Policy and Terms of Service.
-
-4. **📱 Responsive & Accessible (A11y):**
-   - Fully optimized for Mobile, Tablet, and Ultra-wide screens.
-   - Proper heading hierarchy (`h1` -> `h2` -> `h3`), descriptive ARIA labels, and keyboard-navigable controls.
+   - Comprehensive OpenGraph and Twitter card metadata for optimal search engine indexing.
 
 ---
 
@@ -53,12 +57,14 @@ src/
 ├── assets/                  # Optimized raster and SVG graphic assets
 ├── components/
 │   ├── DigitalTools/
-│   │   ├── AllTools.jsx       # Grid display of filtered tool cards
-│   │   ├── DigitalTools.jsx   # Catalog state, search, and category filter controller
-│   │   ├── SelectedTools.jsx  # Cart checkout view with item summary & actions
-│   │   └── Tool.jsx           # Individual product card component
+│   │   ├── AllTools.jsx       # Grid display of filtered tool cards with result count
+│   │   ├── DigitalTools.jsx   # Catalog state, search, category filter & sorting controller
+│   │   ├── SelectedTools.jsx  # Cart checkout view with coupon engine & item summary
+│   │   └── Tool.jsx           # Individual product card component with rating tags
+│   ├── BackToTop.jsx          # Smooth floating back-to-top scroll trigger
 │   ├── Counter.jsx            # Platform engagement metrics and statistics
-│   ├── Footer.jsx             # Footer with newsletter form & legal modal dialogs
+│   ├── FAQ.jsx                # Interactive FAQ accordion component
+│   ├── Footer.jsx             # Footer with newsletter form, repo links & legal modals
 │   ├── Hero.jsx               # Hero banner with social proof badges & CTA
 │   ├── Navbar.jsx             # Sticky glassmorphism header with navigation & cart badge
 │   ├── Pricing.jsx            # Tiered pricing plans (Starter, Pro, Enterprise)
