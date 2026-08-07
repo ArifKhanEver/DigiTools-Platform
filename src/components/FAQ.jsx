@@ -51,20 +51,20 @@ const FAQ = () => {
                         return (
                             <div
                                 key={index}
-                                className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
+                                className={`border rounded-2xl transition-all duration-200 overflow-hidden group ${
                                     isOpen
-                                        ? "border-[#4F39F6]/40 bg-purple-50/30 shadow-sm"
-                                        : "border-gray-200 bg-white hover:border-gray-300"
+                                        ? "border-[#4F39F6]/40 bg-purple-50/40 shadow-sm"
+                                        : "border-gray-200 bg-white hover:border-purple-200 hover:shadow-xs"
                                 }`}
                             >
                                 <button
                                     onClick={() => toggleFaq(index)}
                                     aria-expanded={isOpen}
-                                    className="w-full flex justify-between items-center p-5 md:p-6 text-left font-bold text-gray-800 text-base md:text-lg gap-4 cursor-pointer focus:outline-none"
+                                    className="w-full flex justify-between items-center p-5 md:p-6 text-left font-bold text-gray-900 group-hover:text-[#4F39F6] text-base md:text-lg gap-4 cursor-pointer focus:outline-none transition-colors"
                                 >
                                     <span>{faq.question}</span>
-                                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                                        isOpen ? "bg-[#4F39F6] text-white rotate-180" : "bg-gray-100 text-gray-600"
+                                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
+                                        isOpen ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rotate-180 shadow-xs" : "bg-gray-100 group-hover:bg-purple-100 text-gray-600 group-hover:text-[#4F39F6]"
                                     }`}>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
@@ -73,7 +73,7 @@ const FAQ = () => {
                                 </button>
 
                                 {isOpen && (
-                                    <div className="px-5 md:px-6 pb-6 text-gray-600 text-sm md:text-base leading-relaxed border-t border-purple-100/60 pt-4">
+                                    <div className="px-5 md:px-6 pb-6 text-gray-700 text-sm md:text-base leading-relaxed border-t border-purple-100/60 pt-4">
                                         <p>{faq.answer}</p>
                                     </div>
                                 )}
