@@ -44,11 +44,11 @@ const Footer = () => {
                                     value={newsletterEmail}
                                     onChange={(e) => setNewsletterEmail(e.target.value)}
                                     placeholder="Enter your email"
-                                    className="input input-sm rounded-full bg-gray-800 text-white placeholder-gray-400 border-gray-700 focus:border-[#4F39F6] focus:outline-none flex-1 text-xs"
+                                    className="input input-sm rounded-full bg-gray-800 text-white placeholder-gray-400 border-gray-700 hover:border-purple-400 focus:border-[#4F39F6] focus:outline-none flex-1 text-xs transition-colors"
                                 />
                                 <button
                                     type="submit"
-                                    className="btn btn-sm rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white border-none px-4 text-xs font-semibold"
+                                    className="btn btn-sm rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-95 text-white border-none px-5 text-xs font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-xs"
                                 >
                                     Join
                                 </button>
@@ -60,21 +60,21 @@ const Footer = () => {
                     <div>
                         <h4 className="text-sm font-bold uppercase tracking-wider text-gray-200 mb-4">Product</h4>
                         <ul className="space-y-2.5 text-sm text-gray-400">
-                            <li><a href="#products" className="hover:text-white transition-colors">All Tools</a></li>
-                            <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                            <li><a href="#pricing" className="hover:text-white transition-colors">Pricing Plans</a></li>
-                            <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
-                            <li><a href="#workflow" className="hover:text-white transition-colors">Workflow</a></li>
+                            <li><a href="#products" className="hover:text-purple-300 hover:translate-x-1 transition-all inline-block">All Tools</a></li>
+                            <li><a href="#features" className="hover:text-purple-300 hover:translate-x-1 transition-all inline-block">Features</a></li>
+                            <li><a href="#pricing" className="hover:text-purple-300 hover:translate-x-1 transition-all inline-block">Pricing Plans</a></li>
+                            <li><a href="#faq" className="hover:text-purple-300 hover:translate-x-1 transition-all inline-block">FAQ</a></li>
+                            <li><a href="#workflow" className="hover:text-purple-300 hover:translate-x-1 transition-all inline-block">Workflow</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="text-sm font-bold uppercase tracking-wider text-gray-200 mb-4">Company</h4>
                         <ul className="space-y-2.5 text-sm text-gray-400">
-                            <li><button onClick={() => handlePolicyClick('About DigiTools')} className="hover:text-white transition-colors text-left cursor-pointer">About Us</button></li>
-                            <li><button onClick={() => handlePolicyClick('Careers')} className="hover:text-white transition-colors text-left cursor-pointer">Careers</button></li>
-                            <li><button onClick={() => handlePolicyClick('Press Kit')} className="hover:text-white transition-colors text-left cursor-pointer">Press Kit</button></li>
-                            <li><button onClick={() => handlePolicyClick('Contact Support')} className="hover:text-white transition-colors text-left cursor-pointer">Contact</button></li>
+                            <li><button onClick={() => handlePolicyClick('About DigiTools')} className="hover:text-purple-300 hover:translate-x-1 transition-all text-left cursor-pointer inline-block">About Us</button></li>
+                            <li><button onClick={() => handlePolicyClick('Careers')} className="hover:text-purple-300 hover:translate-x-1 transition-all text-left cursor-pointer inline-block">Careers</button></li>
+                            <li><button onClick={() => handlePolicyClick('Press Kit')} className="hover:text-purple-300 hover:translate-x-1 transition-all text-left cursor-pointer inline-block">Press Kit</button></li>
+                            <li><button onClick={() => handlePolicyClick('Contact Support')} className="hover:text-purple-300 hover:translate-x-1 transition-all text-left cursor-pointer inline-block">Contact</button></li>
                         </ul>
                     </div>
 
@@ -85,7 +85,7 @@ const Footer = () => {
                                 href="https://github.com/ArifKhanEver/DigiTools-Platform"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-300 hover:text-white transition-all"
+                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:scale-110 transition-all shadow-xs"
                                 aria-label="DigiTools on GitHub"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" className="fill-current">
@@ -96,7 +96,7 @@ const Footer = () => {
                                 href="https://twitter.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#4F39F6] flex items-center justify-center text-gray-300 hover:text-white transition-all"
+                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#4F39F6] flex items-center justify-center text-gray-300 hover:text-white hover:scale-110 transition-all shadow-xs"
                                 aria-label="DigiTools on Twitter"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" className="fill-current">
@@ -107,7 +107,7 @@ const Footer = () => {
                                 href="https://facebook.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#1877F2] flex items-center justify-center text-gray-300 hover:text-white transition-all"
+                                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#1877F2] flex items-center justify-center text-gray-300 hover:text-white hover:scale-110 transition-all shadow-xs"
                                 aria-label="DigiTools on Facebook"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" className="fill-current">
@@ -126,17 +126,17 @@ const Footer = () => {
                     <p>© {new Date().getFullYear()} DigiTools Platform. All rights reserved.</p>
                     <ul className='flex flex-wrap gap-6'>
                         <li>
-                            <button onClick={() => handlePolicyClick('Privacy Policy')} className="hover:text-gray-200 transition-colors">
+                            <button onClick={() => handlePolicyClick('Privacy Policy')} className="hover:text-purple-300 transition-colors cursor-pointer">
                                 Privacy Policy
                             </button>
                         </li>
                         <li>
-                            <button onClick={() => handlePolicyClick('Terms of Service')} className="hover:text-gray-200 transition-colors">
+                            <button onClick={() => handlePolicyClick('Terms of Service')} className="hover:text-purple-300 transition-colors cursor-pointer">
                                 Terms of Service
                             </button>
                         </li>
                         <li>
-                            <button onClick={() => handlePolicyClick('Cookie Preferences')} className="hover:text-gray-200 transition-colors">
+                            <button onClick={() => handlePolicyClick('Cookie Preferences')} className="hover:text-purple-300 transition-colors cursor-pointer">
                                 Cookies
                             </button>
                         </li>
