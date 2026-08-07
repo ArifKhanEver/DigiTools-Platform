@@ -34,35 +34,35 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
                             tabIndex="-1"
                             className="menu menu-md dropdown-content bg-white rounded-2xl z-50 mt-3 w-56 p-3 shadow-xl border border-gray-100 font-medium space-y-1"
                         >
-                            <li><a href="#hero" className="hover:text-[#4F39F6]">Home</a></li>
-                            <li><a href="#products" className="hover:text-[#4F39F6]">Products</a></li>
-                            <li><a href="#features" className="hover:text-[#4F39F6]">Features</a></li>
-                            <li><a href="#pricing" className="hover:text-[#4F39F6]">Pricing</a></li>
-                            <li><a href="#faq" className="hover:text-[#4F39F6]">FAQ</a></li>
-                            <li><a href="#workflow" className="hover:text-[#4F39F6]">Workflow</a></li>
+                            <li><a href="#hero" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">Home</a></li>
+                            <li><a href="#products" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">Products</a></li>
+                            <li><a href="#features" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">Features</a></li>
+                            <li><a href="#pricing" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">Pricing</a></li>
+                            <li><a href="#faq" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">FAQ</a></li>
+                            <li><a href="#workflow" className="rounded-xl hover:bg-purple-50 hover:text-[#4F39F6] active:bg-purple-100 transition-colors">Workflow</a></li>
                         </ul>
                     </div>
 
-                    <a href="#hero" className='flex items-center gap-2'>
+                    <a href="#hero" className='flex items-center gap-2 hover:opacity-90 transition-opacity'>
                         <img src={logo} alt="DigiTools logo" className='w-32 md:w-44 h-auto' />
                     </a>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold text-gray-700 gap-1 text-[15px]">
-                        <li><a href="#hero" className="hover:text-[#4F39F6] transition-colors">Home</a></li>
-                        <li><a href="#products" className="hover:text-[#4F39F6] transition-colors">Products</a></li>
-                        <li><a href="#features" className="hover:text-[#4F39F6] transition-colors">Features</a></li>
-                        <li><a href="#pricing" className="hover:text-[#4F39F6] transition-colors">Pricing</a></li>
-                        <li><a href="#faq" className="hover:text-[#4F39F6] transition-colors">FAQ</a></li>
-                        <li><a href="#workflow" className="hover:text-[#4F39F6] transition-colors">Workflow</a></li>
+                        <li><a href="#hero" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">Home</a></li>
+                        <li><a href="#products" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">Products</a></li>
+                        <li><a href="#features" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">Features</a></li>
+                        <li><a href="#pricing" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">Pricing</a></li>
+                        <li><a href="#faq" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">FAQ</a></li>
+                        <li><a href="#workflow" className="rounded-full px-4 py-2 hover:bg-purple-50 hover:text-[#4F39F6] active:scale-95 transition-all">Workflow</a></li>
                     </ul>
                 </div>
 
                 <div className="navbar-end flex items-center gap-2 md:gap-3">
                     <button
                         onClick={onCartClick}
-                        className="btn btn-ghost btn-circle relative hover:bg-purple-50 transition-all"
+                        className="btn btn-ghost btn-circle relative hover:bg-purple-50 hover:text-[#4F39F6] transition-all cursor-pointer"
                         aria-label={`Shopping cart with ${cartCount} items`}
                         title="View Cart"
                     >
@@ -78,14 +78,14 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
 
                     <button
                         onClick={handleLogin}
-                        className="btn btn-ghost text-gray-700 font-semibold hover:text-black hidden sm:inline-flex"
+                        className="btn btn-ghost text-gray-700 font-semibold hover:bg-purple-50 hover:text-[#4F39F6] rounded-full px-4 transition-all hidden sm:inline-flex cursor-pointer"
                     >
                         Login
                     </button>
 
                     <button
                         onClick={handleGetStarted}
-                        className="btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold border-none px-5 shadow-sm hover:shadow-md transition-all cursor-pointer text-sm md:text-base"
+                        className="btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-95 hover:scale-105 active:scale-95 text-white font-semibold border-none px-5 shadow-sm hover:shadow-md transition-all cursor-pointer text-sm md:text-base"
                     >
                         Get Started
                     </button>
