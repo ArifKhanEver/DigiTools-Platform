@@ -38,17 +38,17 @@ const Counter = () => {
         <section aria-label="Platform Statistics" className='bg-linear-to-r from-[#4F39F6] to-[#9514FA] py-12 md:py-16 text-white shadow-inner relative overflow-hidden'>
             <div className='max-w-[90%] md:max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 divide-y sm:divide-y-0 sm:divide-x divide-white/20'>
                 {stats.map((stat, idx) => (
-                    <div key={idx} className='text-center px-6 pt-4 sm:pt-0 flex flex-col items-center justify-center group transition-transform duration-300 hover:scale-105'>
-                        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:bg-white/20 transition-colors">
+                    <div key={idx} className='text-center px-6 pt-4 sm:pt-0 flex flex-col items-center justify-center group transition-all duration-300 hover:scale-105 cursor-default'>
+                        <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-xs flex items-center justify-center mb-3 group-hover:bg-white/25 group-hover:shadow-lg transition-all duration-300">
                             {stat.icon}
                         </div>
-                        <h2 className='text-4xl md:text-5xl lg:text-6xl font-black mb-1 tracking-tight'>
+                        <h2 className='text-4xl md:text-5xl lg:text-6xl font-black mb-1 tracking-tight text-white group-hover:text-purple-100 transition-colors'>
                             {stat.value}
                         </h2>
                         <p className='text-white text-base md:text-lg font-bold'>
                             {stat.label}
                         </p>
-                        <p className='text-purple-200 text-xs md:text-sm font-medium mt-0.5'>
+                        <p className='text-purple-100 text-xs md:text-sm font-medium mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity'>
                             {stat.subtext}
                         </p>
                     </div>
