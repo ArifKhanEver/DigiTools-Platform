@@ -114,14 +114,14 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                         {selectedTools.map(tool => (
                             <div
                                 key={tool.id}
-                                className='flex justify-between items-center bg-gray-50/80 hover:bg-gray-100/80 p-4 rounded-xl transition-all border border-gray-100'
+                                className='flex justify-between items-center bg-gray-50/80 hover:bg-purple-50/40 p-4 rounded-xl transition-all border border-gray-100 hover:border-purple-200 shadow-2xs'
                             >
                                 <div className='flex items-center gap-4'>
-                                    <div className="w-12 h-12 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shrink-0">
+                                    <div className="w-12 h-12 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shrink-0 shadow-2xs">
                                         <img src={tool.icon} alt={tool.name} className='w-full h-full object-contain' />
                                     </div>
                                     <div>
-                                        <h5 className='text-base md:text-lg font-bold text-gray-800'>{tool.name}</h5>
+                                        <h5 className='text-base md:text-lg font-bold text-gray-900'>{tool.name}</h5>
                                         <p className='text-sm text-gray-500 capitalize'>{tool.period} plan</p>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                                     <span className='font-bold text-lg text-gray-900'>${tool.price}</span>
                                     <button
                                         onClick={() => handleRemoveItem(tool)}
-                                        className="btn btn-ghost btn-circle btn-sm text-red-500 hover:bg-red-50"
+                                        className="btn btn-ghost btn-circle btn-sm text-red-500 hover:bg-red-50 hover:text-red-600 transition-colors cursor-pointer"
                                         title="Remove tool"
                                         aria-label={`Remove ${tool.name}`}
                                     >
@@ -150,23 +150,23 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                                         placeholder="Promo code (e.g. DIGI20)"
                                         value={couponCode}
                                         onChange={(e) => setCouponCode(e.target.value)}
-                                        className="input input-sm md:input-md input-bordered rounded-full flex-1 text-sm bg-gray-50 focus:bg-white border-gray-200 uppercase"
+                                        className="input input-sm md:input-md input-bordered rounded-full flex-1 text-sm bg-gray-50 hover:border-purple-300 focus:bg-white border-gray-200 uppercase transition-colors"
                                     />
                                     <button
                                         type="submit"
-                                        className="btn btn-sm md:btn-md rounded-full bg-gray-900 text-white hover:bg-black border-none px-5 text-xs font-semibold"
+                                        className="btn btn-sm md:btn-md rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white hover:opacity-95 border-none px-6 text-xs font-bold transition-all shadow-xs cursor-pointer"
                                     >
                                         Apply
                                     </button>
                                 </form>
                             ) : (
-                                <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-2 rounded-xl text-sm font-semibold">
+                                <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-2.5 rounded-xl text-sm font-semibold">
                                     <div className="flex items-center gap-2">
                                         <span>🏷️ Coupon Applied: <strong>{appliedDiscount.code}</strong> ({appliedDiscount.label})</span>
                                     </div>
                                     <button
                                         onClick={handleRemoveCoupon}
-                                        className="text-xs text-red-500 hover:underline font-bold"
+                                        className="text-xs bg-white hover:bg-red-50 text-red-600 border border-red-200 px-2.5 py-1 rounded-lg transition-colors font-bold cursor-pointer"
                                     >
                                         Remove
                                     </button>
@@ -199,7 +199,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
 
                             <button
                                 onClick={handleCheckout}
-                                className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold rounded-full border-none shadow-lg mt-4 cursor-pointer text-base active:scale-95 transition-all"
+                                className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-95 text-white font-semibold rounded-full border-none shadow-md hover:shadow-xl mt-4 cursor-pointer text-base active:scale-95 transition-all"
                             >
                                 Proceed To Checkout (${finalTotal})
                             </button>
