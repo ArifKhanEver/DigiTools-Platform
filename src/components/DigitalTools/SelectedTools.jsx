@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
+    const [couponCode, setCouponCode] = useState('');
+    const [appliedDiscount, setAppliedDiscount] = useState(null);
+
+    const handleApplyCoupon = (e) => {
+        e.preventDefault();
+        const code = couponCode.trim().toUpperCase();
+
+        if (!code) {
+            toast.warning("Please enter a valid coupon code.");
+            return;
+        }
+
+        if (code === 'DIGI20') {
+            setAppliedDiscount({ code: 'DIGI20', rate: 0.20, label: '20% OFF' });
+            toast.success("🎉 Promo code 'DIGI20' applied! (20% discount)");
+            setCouponCode('');
+        } else if (code === 'WELCOME10') {
+            setAppliedDiscount({ code: 'WELCOME10', fixed: 10, label: '$10 OFF' });
+            toast.success("🎉 Promo code 'WELCOME10' applied! ($10 discount)");
+            setCouponCode('');
+        } else {
+            toast.error("Invalid coupon code. Try 'DIGI20' or 'WELCOME10'!");
+        }
+    };
+
+    const handleRemoveCoupon = () => {
+        setAppliedDiscount(null);
+        toast.info("Coupon removed.");
+    };
 
     const handleCheckout = () => {
         if (selectedTools.length === 0) {
@@ -11,6 +40,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
 
         const count = selectedTools.length;
         setSelectedTools([]);
+        setAppliedDiscount(null);
         toast.success(`🎉 Purchase complete for ${count} item${count > 1 ? 's' : ''}! Order confirmation sent.`);
     };
 
@@ -22,10 +52,22 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
     const handleClearCart = () => {
         if (selectedTools.length === 0) return;
         setSelectedTools([]);
+        setAppliedDiscount(null);
         toast.info("Cart has been cleared.");
     };
 
-    const totalPrice = selectedTools.reduce((sum, item) => sum + item.price, 0);
+    const subtotal = selectedTools.reduce((sum, item) => sum + item.price, 0);
+
+    let discountAmount = 0;
+    if (appliedDiscount) {
+        if (appliedDiscount.rate) {
+            discountAmount = Math.round(subtotal * appliedDiscount.rate);
+        } else if (appliedDiscount.fixed) {
+            discountAmount = Math.min(appliedDiscount.fixed, subtotal);
+        }
+    }
+
+    const finalTotal = Math.max(0, subtotal - discountAmount);
 
     return (
         <div className='max-w-3xl mx-auto'>
@@ -49,7 +91,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
 
                 {selectedTools.length === 0 ? (
                     <div className='py-16 text-center space-y-4'>
-                        <div className="w-20 h-20 mx-auto rounded-full bg-purple-50 flex items-center justify-center text-purple-500">
+                        <div className="w-20 h-20 mx-auto rounded-full bg-purple-50 flex items-center justify-center text-[#4F39F6]">
                             <svg xmlns="http://www.w3.org/2000/svg" className="size-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
@@ -61,7 +103,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                         {onBrowseClick && (
                             <button
                                 onClick={onBrowseClick}
-                                className="btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white px-8 mt-2 border-none shadow-md"
+                                className="btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white px-8 mt-2 border-none shadow-md hover:shadow-lg transition-all"
                             >
                                 Browse Products
                             </button>
@@ -99,25 +141,67 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                             </div>
                         ))}
 
-                        <div className='pt-6 border-t mt-6 space-y-4'>
+                        {/* Promo Code Input Box */}
+                        <div className="pt-4">
+                            {!appliedDiscount ? (
+                                <form onSubmit={handleApplyCoupon} className="flex gap-2">
+                                    <input
+                                        type="text"
+                                        placeholder="Promo code (e.g. DIGI20)"
+                                        value={couponCode}
+                                        onChange={(e) => setCouponCode(e.target.value)}
+                                        className="input input-sm md:input-md input-bordered rounded-full flex-1 text-sm bg-gray-50 focus:bg-white border-gray-200 uppercase"
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="btn btn-sm md:btn-md rounded-full bg-gray-900 text-white hover:bg-black border-none px-5 text-xs font-semibold"
+                                    >
+                                        Apply
+                                    </button>
+                                </form>
+                            ) : (
+                                <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-2 rounded-xl text-sm font-semibold">
+                                    <div className="flex items-center gap-2">
+                                        <span>🏷️ Coupon Applied: <strong>{appliedDiscount.code}</strong> ({appliedDiscount.label})</span>
+                                    </div>
+                                    <button
+                                        onClick={handleRemoveCoupon}
+                                        className="text-xs text-red-500 hover:underline font-bold"
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className='pt-4 border-t mt-4 space-y-3'>
                             <div className='flex justify-between items-center px-2'>
                                 <span className='text-gray-600 font-medium'>Subtotal</span>
-                                <span className='font-semibold text-gray-800'>${totalPrice}</span>
+                                <span className='font-semibold text-gray-800'>${subtotal}</span>
                             </div>
+
+                            {appliedDiscount && (
+                                <div className='flex justify-between items-center px-2 text-emerald-600 font-medium'>
+                                    <span>Discount ({appliedDiscount.label})</span>
+                                    <span>-${discountAmount}</span>
+                                </div>
+                            )}
+
                             <div className='flex justify-between items-center px-2'>
                                 <span className='text-gray-600 font-medium'>Instant Access Fee</span>
                                 <span className='font-semibold text-emerald-600'>Free</span>
                             </div>
+
                             <div className='flex justify-between items-center px-2 pt-2 border-t text-lg'>
                                 <span className='font-bold text-gray-900'>Total:</span>
-                                <span className='font-extrabold text-2xl text-[#4F39F6]'>${totalPrice}</span>
+                                <span className='font-extrabold text-2xl text-[#4F39F6]'>${finalTotal}</span>
                             </div>
 
                             <button
                                 onClick={handleCheckout}
-                                className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold rounded-full border-none shadow-lg mt-4 cursor-pointer text-base"
+                                className="btn btn-block bg-linear-to-r from-[#4F39F6] to-[#9514FA] hover:opacity-90 text-white font-semibold rounded-full border-none shadow-lg mt-4 cursor-pointer text-base active:scale-95 transition-all"
                             >
-                                Proceed To Checkout (${totalPrice})
+                                Proceed To Checkout (${finalTotal})
                             </button>
                         </div>
                     </div>
