@@ -8,6 +8,7 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Workflow from './components/Workflow';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import DigitalTools from './components/DigitalTools/DigitalTools';
 
 const toolsData = fetch('/data.json').then(res => res.json());
@@ -54,6 +55,7 @@ function App() {
         <Workflow />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
