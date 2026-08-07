@@ -60,23 +60,23 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
 
                 {/* Tab switcher: All Products vs Shopping Cart */}
                 <div className="toggleBtns flex justify-center mb-10">
-                    <div className='bg-gray-100 p-1.5 rounded-full inline-flex shadow-inner'>
+                    <div className='bg-gray-100/90 p-1.5 rounded-full inline-flex shadow-inner border border-gray-200/50'>
                         <button
                             onClick={() => handleToggle('Products')}
-                            className={`btn btn-sm md:btn-md rounded-full px-6 md:px-8 font-semibold transition-all border-none ${
+                            className={`btn btn-sm md:btn-md rounded-full px-6 md:px-8 font-semibold transition-all border-none cursor-pointer ${
                                 activeTab === "Products"
-                                    ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white shadow-md"
-                                    : "bg-transparent text-gray-700 hover:text-black shadow-none"
+                                    ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white shadow-md hover:opacity-95"
+                                    : "bg-transparent text-gray-700 hover:text-[#4F39F6] hover:bg-white/60 shadow-none"
                             }`}
                         >
                             All Products ({rawTools.length})
                         </button>
                         <button
                             onClick={() => handleToggle('Cart')}
-                            className={`btn btn-sm md:btn-md rounded-full px-6 md:px-8 font-semibold transition-all border-none ${
+                            className={`btn btn-sm md:btn-md rounded-full px-6 md:px-8 font-semibold transition-all border-none cursor-pointer ${
                                 activeTab === "Cart"
-                                    ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white shadow-md"
-                                    : "bg-transparent text-gray-700 hover:text-black shadow-none"
+                                    ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white shadow-md hover:opacity-95"
+                                    : "bg-transparent text-gray-700 hover:text-[#4F39F6] hover:bg-white/60 shadow-none"
                             }`}
                         >
                             Cart ({selectedTools.length})
@@ -94,10 +94,10 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
                                     <button
                                         key={category}
                                         onClick={() => setSelectedCategory(category)}
-                                        className={`btn btn-sm rounded-full text-xs font-semibold transition-all ${
+                                        className={`btn btn-sm rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer active:scale-95 ${
                                             selectedCategory === category
-                                                ? "bg-gray-900 text-white border-gray-900 shadow-xs"
-                                                : "bg-gray-100 hover:bg-gray-200 text-gray-700 border-none"
+                                                ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white border-none shadow-xs scale-105"
+                                                : "bg-gray-100 hover:bg-purple-100 hover:text-[#4F39F6] text-gray-700 border-none"
                                         }`}
                                     >
                                         {category}
@@ -113,7 +113,7 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
                                         value={sortBy}
                                         onChange={(e) => setSortBy(e.target.value)}
                                         aria-label="Sort products by"
-                                        className="select select-bordered select-sm md:select-md rounded-full bg-gray-50 focus:bg-white text-xs md:text-sm font-medium border-gray-200 focus:border-[#4F39F6] w-full sm:w-auto"
+                                        className="select select-bordered select-sm md:select-md rounded-full bg-gray-50 hover:border-purple-300 focus:bg-white text-xs md:text-sm font-medium border-gray-200 focus:border-[#4F39F6] transition-colors w-full sm:w-auto cursor-pointer"
                                     >
                                         <option value="featured">✨ Featured</option>
                                         <option value="price-asc">💵 Price: Low to High</option>
@@ -129,7 +129,7 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                         placeholder="Search tools & kits..."
-                                        className="input input-bordered input-sm md:input-md w-full rounded-full pl-10 pr-8 bg-gray-50 focus:bg-white focus:outline-none focus:border-[#4F39F6] border-gray-200 text-sm"
+                                        className="input input-bordered input-sm md:input-md w-full rounded-full pl-10 pr-8 bg-gray-50 hover:border-purple-300 focus:bg-white focus:outline-none focus:border-[#4F39F6] border-gray-200 text-sm transition-colors"
                                     />
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
