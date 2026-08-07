@@ -38,6 +38,7 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
                             <li><a href="#products" className="hover:text-[#4F39F6]">Products</a></li>
                             <li><a href="#features" className="hover:text-[#4F39F6]">Features</a></li>
                             <li><a href="#pricing" className="hover:text-[#4F39F6]">Pricing</a></li>
+                            <li><a href="#faq" className="hover:text-[#4F39F6]">FAQ</a></li>
                             <li><a href="#workflow" className="hover:text-[#4F39F6]">Workflow</a></li>
                         </ul>
                     </div>
@@ -53,6 +54,7 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
                         <li><a href="#products" className="hover:text-[#4F39F6] transition-colors">Products</a></li>
                         <li><a href="#features" className="hover:text-[#4F39F6] transition-colors">Features</a></li>
                         <li><a href="#pricing" className="hover:text-[#4F39F6] transition-colors">Pricing</a></li>
+                        <li><a href="#faq" className="hover:text-[#4F39F6] transition-colors">FAQ</a></li>
                         <li><a href="#workflow" className="hover:text-[#4F39F6] transition-colors">Workflow</a></li>
                     </ul>
                 </div>

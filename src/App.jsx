@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Counter from './components/Counter';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
+import FAQ from './components/FAQ';
 import Workflow from './components/Workflow';
 import Footer from './components/Footer';
 import DigitalTools from './components/DigitalTools/DigitalTools';
@@ -49,6 +50,7 @@ function App() {
 
         <Steps />
         <Pricing />
+        <FAQ />
         <Workflow />
       </main>
       <Footer />
