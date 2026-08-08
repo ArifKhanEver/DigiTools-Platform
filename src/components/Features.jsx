@@ -1,4 +1,5 @@
 import React from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const features = [
     {
@@ -64,6 +65,8 @@ const features = [
 ];
 
 const Features = () => {
+    const { ref, revealed } = useScrollReveal({ threshold: 0.1 });
+
     return (
         <section id="features" className="py-16 md:py-24 bg-gray-50 scroll-mt-20">
             <div className="max-w-[90%] md:max-w-[1200px] mx-auto">
@@ -79,11 +82,12 @@ const Features = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((f, i) => (
                         <div
                             key={i}
-                            className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                            style={{ animationDelay: `${i * 80}ms` }}
+                            className={`bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group ${revealed ? 'slide-up' : 'opacity-0'}`}
                         >
                             <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${f.gradient} text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                                 {f.icon}
