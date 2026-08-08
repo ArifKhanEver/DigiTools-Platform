@@ -109,5 +109,17 @@ npm run preview
 
 ---
 
+## 🚀 Vercel Deployment
+
+This project is pre-configured with `vercel.json` for zero-configuration deployment to Vercel:
+
+1. Import repository on [vercel.com](https://vercel.com/new).
+2. Framework Preset: **Vite** (auto-detected).
+3. Build Command: `npm run build`
+4. Output Directory: `dist`
+5. Click **Deploy**.
+
+---
+
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
