@@ -1,0 +1,20 @@
+/* src/styles/variables.css */
+:root {
+  /* Brand gradient colors */
+  --color-primary-start: #4F39F6; /* Indigo */
+  --color-primary-end: #9514FA;   /* Purple */
+  --color-primary: var(--color-primary-start);
+  /* Light mode palette */
+  --color-bg: #ffffff;
+  --color-bg-muted: #f9fafb;
+  --color-text: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #111827;
+    --color-bg-muted: #1f2937;
+    --color-text: #f9fafb;
+    --color-primary: var(--color-primary-end);
+  }
+}

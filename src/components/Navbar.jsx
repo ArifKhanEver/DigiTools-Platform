@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/DigiTools.png';
+import ThemeToggle from './ThemeToggle';
+import NavLink from './NavLink';
 import cart from '../assets/shopping-cart.png';
 import { toast } from 'react-toastify';
 
@@ -16,7 +17,7 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
     };
 
     return (
-        <header className='shadow-xs sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all'>
+                <header className='shadow-xs sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all fade-in'>
             <div className="max-w-[1200px] mx-auto navbar py-3 px-4 md:px-6">
                 <div className="navbar-start">
                     <div className="dropdown">

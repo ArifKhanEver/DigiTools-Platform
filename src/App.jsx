@@ -1,5 +1,5 @@
 import { Suspense, useState } from 'react';
-import './App.css';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Counter from './components/Counter';
@@ -26,7 +26,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans">
+    <ThemeProvider>
+      <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans">
       <Navbar
         cartCount={selectedTools.length}
         onCartClick={handleCartClick}
@@ -57,6 +58,7 @@ function App() {
       <Footer />
       <BackToTop />
     </div>
+    </ThemeProvider>
   );
 }
 
