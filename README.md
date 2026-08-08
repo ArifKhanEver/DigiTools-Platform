@@ -1,125 +1,224 @@
-# 🚀 DigiTools — Premium Digital Tools Platform
+<div align="center">
 
-A modern, high-performance, and responsive web application designed to provide a seamless digital marketplace experience. DigiTools enables creators, developers, and businesses to explore, search, filter, and acquire curated digital assets and AI tools.
+  <img src="public/AiTool.png" alt="DigiTools Logo" width="100" height="100" />
 
-> **v2.0** — Major update with animated counter, testimonials carousel, newsletter section, cookie consent, features grid, custom hooks (useScrollReveal, useLocalStorage, useDebounce), skeleton loading, and enhanced accessibility.
+  # ⚡ DigiTools Platform
+  ### Next-Generation Digital Tools & AI Marketplace
+
+  <p align="center">
+    A premium, blazingly fast, and beautifully designed digital marketplace crafted with <b>React 19</b>, <b>Tailwind CSS v4</b>, <b>DaisyUI 5</b>, and <b>Vite 8</b>.
+  </p>
+
+  <p align="center">
+    <a href="https://github.com/ArifKhanEver/DigiTools-Platform/stargazers"><img src="https://img.shields.io/github/stars/ArifKhanEver/DigiTools-Platform?style=for-the-badge&color=8B5CF6&logo=github" alt="Stars" /></a>
+    <a href="https://github.com/ArifKhanEver/DigiTools-Platform/network/members"><img src="https://img.shields.io/github/forks/ArifKhanEver/DigiTools-Platform?style=for-the-badge&color=3B82F6&logo=github" alt="Forks" /></a>
+    <a href="https://github.com/ArifKhanEver/DigiTools-Platform/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ArifKhanEver/DigiTools-Platform?style=for-the-badge&color=10B981" alt="License" /></a>
+  </p>
+
+  <p align="center">
+    <img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React 19" />
+    <img src="https://img.shields.io/badge/Vite_8-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 8" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS v4" />
+    <img src="https://img.shields.io/badge/DaisyUI_5-5A0EF8?style=flat-square&logo=daisyui&logoColor=white" alt="DaisyUI 5" />
+    <img src="https://img.shields.io/badge/Vercel_Ready-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel Ready" />
+  </p>
+
+  ---
+
+  <p align="center">
+    <a href="#-key-features"><b>Key Features</b></a> •
+    <a href="#-live-demo"><b>Live Demo</b></a> •
+    <a href="#-tech-stack"><b>Tech Stack</b></a> •
+    <a href="#-architecture"><b>Architecture</b></a> •
+    <a href="#-getting-started"><b>Getting Started</b></a> •
+    <a href="#-deployment"><b>Deployment</b></a> •
+    <a href="#-author"><b>Author</b></a>
+  </p>
+
+</div>
 
 ---
 
-## 📸 Overview & Live Demo
+## 🌟 Overview
 
-* **Live Site:** [digitoolsfordigitalworkflow.netlify.app](https://digitoolsfordigitalworkflow.netlify.app/)
-* **Repository:** [github.com/ArifKhanEver/DigiTools-Platform](https://github.com/ArifKhanEver/DigiTools-Platform)
+**DigiTools** is a curated digital marketplace and discovery platform designed for software engineers, product designers, content creators, and modern digital entrepreneurs. 
 
----
-
-## 🛠️ Tech Stack & Dependencies
-
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **UI Library** | [React 19](https://react.dev/) | Component-driven declarative UI architecture |
-| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) & [DaisyUI 5](https://daisyui.com/) | Utility-first styling & accessible component primitives |
-| **Build Tool** | [Vite](https://vitejs.dev/) | Lightning-fast HMR and optimized production bundling |
-| **Notifications** | [React-Toastify](https://fkhadra.github.io/react-toastify/) | Non-intrusive interactive feedback and alerts |
-| **Typography** | [Manrope](https://fonts.google.com/specimen/Manrope) | Modern geometric sans-serif typeface |
+Engineered with performance and aesthetics at its core, DigiTools delivers instant filtering, live debounced search, rich product catalog management, interactive shopping cart with promo coupon discounting, dark/light theme switching, and smooth micro-interactions.
 
 ---
 
-## ✨ Key Features & Architectural Highlights
+## ✨ Key Features
 
-1. **⚡ Dynamic Catalog, Instant Search & Sorting:**
-   - Real-time client-side search across tool titles and descriptive metadata.
-   - Dynamic category tag filtering (`All`, `Exclusive`, `Top Pick`, `Essential`, `Enterprise`).
-   - Multiple sorting modes (`✨ Featured`, `💵 Price: Low to High`, `💎 Price: High to Low`, `🔤 Name: A to Z`).
-   - Graceful zero-state views with single-click filter resets and live result counters.
+### 🔍 1. Real-Time Intelligent Catalog & Search
+- **Instant Debounced Search:** Zero-latency query matching across tool names, categories, and technical descriptions.
+- **Dynamic Category Filtering:** Filter tools instantly by tags (`Exclusive`, `Top Pick`, `Essential`, `Enterprise`, `All`).
+- **Multi-Criteria Sorting:** Sort by `Featured`, `Price: Low to High`, `Price: High to Low`, and `Alphabetical (A-Z)`.
+- **Zero-State Handling:** Elegant empty-state display with a single-click reset button.
 
-2. **🛒 Reactive Cart, State Synchronization & Coupons:**
-   - Bidirectional state syncing between Header badge indicator and Cart view.
-   - Integrated promo coupon discount system (`DIGI20` for 20% off, `WELCOME10` for $10 off).
-   - Instant subtotal/total calculation with automatic duplicate item prevention.
-   - Interactive checkout simulation with contextual feedback.
+### 🛒 2. Reactive Shopping Cart & Coupon Engine
+- **Global Cart Synchronization:** Live cart item counter badge in the sticky navigation header.
+- **Interactive Discount Vouchers:**
+  - `DIGI20` — Unlocks **20% instant discount** across total cart value.
+  - `WELCOME10` — Unlocks **$10 flat discount**.
+- **Cart Protection:** Automatic duplicate item prevention with contextual feedback alerts.
+- **Simulated Checkout Flow:** Clear cart and checkout workflows with animated notifications.
 
-3. **💬 Interactive FAQ & Onboarding:**
-   - Smooth accordion collapse components for common questions regarding commercial licensing, updates, and refunds.
-   - Clear 3-step feature roadmap for new users.
+### 🌓 3. Theme Customization & Accessibility
+- **Light & Dark Mode:** Native toggle with automatic system color scheme preference detection.
+- **Persistent State:** Saves user theme preferences across sessions via `useLocalStorage`.
+- **High-Contrast Design:** Tested for readability and accessible color contrast.
 
-4. **🎨 Modern Aesthetics, Micro-interactions & A11y:**
-   - Curated linear gradient palettes (`#4F39F6` to `#9514FA`).
-   - Floating `BackToTop` button with window scroll triggers.
-   - Subtle card hover elevations, smooth anchor scrolling, and spring transitions.
-   - Accessible modal dialogues for Privacy Policy and Terms of Service.
-   - Comprehensive OpenGraph and Twitter card metadata for optimal search engine indexing.
+### ⚡ 4. Modern UX & Robust Stability
+- **React 19 Architecture:** ErrorBoundary protection and resilient data fetching.
+- **Skeleton Loading Placeholders:** Shimmer UI feedback during catalog resolution.
+- **Micro-Animations:** Smooth spring hover elevation effects, glowing gradients (`#4F39F6` to `#9514FA`), and floating back-to-top navigation.
+- **Interactive Modals & Toasts:** Reusable toast notification system and comprehensive legal/privacy modals.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Tool / Library | Version | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Frontend Framework** | [React](https://react.dev/) | `^19.2.4` | Component architecture & modern state hooks |
+| **Bundler & Dev Server** | [Vite](https://vitejs.dev/) | `^8.0.1` | Instant HMR & Rolldown production bundling |
+| **Styling Engine** | [Tailwind CSS](https://tailwindcss.com/) | `^4.2.2` | Modern utility-first CSS design tokens |
+| **Component Library** | [DaisyUI](https://daisyui.com/) | `^5.5.19` | Accessible UI primitives & theme management |
+| **Icons** | [React Icons](https://react-icons.github.io/react-icons/) | `^5.2.0` | Feather & Lucide icon collections |
+| **Notifications** | [React-Toastify](https://fkhadra.github.io/react-toastify/) | `^11.0.5` | Non-intrusive alert toasts |
+| **Deployment** | [Vercel](https://vercel.com/) | Edge | Production hosting with SPA routing & edge caching |
 
 ---
 
 ## 📂 Project Architecture
 
 ```plaintext
-src/
-├── assets/                  # Optimized raster and SVG graphic assets
-├── components/
-│   ├── DigitalTools/
-│   │   ├── AllTools.jsx       # Grid display of filtered tool cards with result count
-│   │   ├── DigitalTools.jsx   # Catalog state, search, category filter & sorting controller
-│   │   ├── SelectedTools.jsx  # Cart checkout view with coupon engine & item summary
-│   │   └── Tool.jsx           # Individual product card component with rating tags
-│   ├── BackToTop.jsx          # Smooth floating back-to-top scroll trigger
-│   ├── Counter.jsx            # Platform engagement metrics and statistics
-│   ├── FAQ.jsx                # Interactive FAQ accordion component
-│   ├── Footer.jsx             # Footer with newsletter form, repo links & legal modals
-│   ├── Hero.jsx               # Hero banner with social proof badges & CTA
-│   ├── Navbar.jsx             # Sticky glassmorphism header with navigation & cart badge
-│   ├── Pricing.jsx            # Tiered pricing plans (Starter, Pro, Enterprise)
-│   ├── Steps.jsx              # Onboarding 3-step feature roadmap
-│   └── Workflow.jsx           # Value proposition & conversion CTA section
-├── App.jsx                  # Root component coordinating global state
-├── index.css                # Global design system variables & font imports
-└── main.jsx                 # React entry point with toast notifications provider
+DigiTools-Platform/
+├── public/                       # Static public assets
+│   ├── AiTool.png                # Brand favicon & icon
+│   ├── data.json                 # Digital tools JSON dataset
+│   ├── favicon.svg               # Vector brand badge
+│   └── icons.svg                 # SVG sprite sheet
+├── src/
+│   ├── assets/                   # Vector & raster UI artwork
+│   ├── components/
+│   │   ├── DigitalTools/
+│   │   │   ├── AllTools.jsx      # Product grid with result counter
+│   │   │   ├── DigitalTools.jsx  # Catalog controller & filter bar
+│   │   │   ├── SelectedTools.jsx # Cart summary & coupon system
+│   │   │   └── Tool.jsx          # Individual product card
+│   │   ├── BackToTop.jsx         # Floating back-to-top trigger
+│   │   ├── CookieBanner.jsx      # Privacy compliance banner
+│   │   ├── Counter.jsx           # Platform statistics metrics
+│   │   ├── ErrorBoundary.jsx     # Graceful UI crash protection
+│   │   ├── FAQ.jsx               # Interactive accordion
+│   │   ├── Features.jsx          # Feature highlights grid
+│   │   ├── Footer.jsx            # Multi-column footer & modals
+│   │   ├── Hero.jsx              # Hero banner with social proof
+│   │   ├── Navbar.jsx            # Sticky glassmorphism header
+│   │   ├── NotFound.jsx          # Modern custom 404 page
+│   │   ├── Pricing.jsx           # Tiered subscription plans
+│   │   ├── SkeletonCard.jsx      # Shimmer loading placeholders
+│   │   ├── Steps.jsx             # 3-Step user onboarding flow
+│   │   ├── Testimonials.jsx      # Customer review cards
+│   │   └── Workflow.jsx          # Value proposition showcase
+│   ├── context/
+│   │   └── ThemeContext.jsx      # Dark/Light mode context provider
+│   ├── hooks/
+│   │   ├── useDebounce.js        # Debounce hook for real-time search
+│   │   ├── useLocalStorage.js    # LocalStorage persistence hook
+│   │   ├── useScrollReveal.js    # Intersection observer reveal hook
+│   │   ├── useTheme.js           # Theme consumer hook
+│   │   └── useToast.js           # Notification trigger hook
+│   ├── App.jsx                   # Root application container
+│   ├── index.css                 # Global design tokens & styles
+│   └── main.jsx                  # Application bootstrap
+├── eslint.config.js              # ESLint 9 configuration
+├── vercel.json                   # Vercel SPA routing & security headers
+├── vite.config.js                # Vite 8 configuration with code splitting
+└── package.json                  # Dependencies and scripts
 ```
 
 ---
 
-## 💻 Getting Started Locally
+## 💻 Getting Started
 
 ### Prerequisites
-- Node.js (v18.0.0 or higher recommended)
-- npm or yarn
+- **Node.js**: `v18.0.0` or higher
+- **Package Manager**: `npm`, `yarn`, or `pnpm`
 
-### Installation & Development
+### Local Setup
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/ArifKhanEver/DigiTools-Platform.git
 
-# 2. Navigate into project directory
-cd B13-Assignment-6
+# 2. Enter the project root
+cd DigiTools-Platform
 
 # 3. Install dependencies
 npm install
 
-# 4. Start Vite local development server
+# 4. Launch development server
 npm run dev
+```
 
-# 5. Build for production
+Visit `http://localhost:5173` in your browser to explore the platform locally.
+
+### Production Build
+
+```bash
+# Compile and bundle for production
 npm run build
 
-# 6. Preview production build
+# Preview the production bundle locally
 npm run preview
 ```
 
 ---
 
-## 🚀 Vercel Deployment
+## 🚀 Deployment to Vercel
 
-This project is pre-configured with `vercel.json` for zero-configuration deployment to Vercel:
+This repository includes a production-ready `vercel.json` configuration with automated SPA rewrites, security headers, and asset caching rules.
 
-1. Import repository on [vercel.com](https://vercel.com/new).
-2. Framework Preset: **Vite** (auto-detected).
-3. Build Command: `npm run build`
-4. Output Directory: `dist`
+### One-Click Deploy via Git:
+1. Push your changes to GitHub.
+2. Go to [Vercel Dashboard](https://vercel.com/new).
+3. Import the `ArifKhanEver/DigiTools-Platform` repository.
+4. Framework Preset will auto-detect as **Vite**.
 5. Click **Deploy**.
 
 ---
 
+## 📜 Available Scripts
+
+| Command | Action |
+| :--- | :--- |
+| `npm run dev` | Starts Vite local development server with Hot Module Replacement |
+| `npm run build` | Compiles optimized production bundle into `dist/` |
+| `npm run preview` | Spins up local HTTP server to preview production build |
+| `npm run lint` | Runs ESLint 9 checks across all source files |
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m "feat: add some AmazingFeature"`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
 ## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+  <sub>Crafted with ❤️ by <a href="https://github.com/ArifKhanEver"><b>Arif Khan</b></a></sub>
+</div>
