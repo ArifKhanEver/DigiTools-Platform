@@ -1,7 +1,7 @@
 import { createContext, useEffect, useContext } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-const ThemeContext = createContext({
+export const ThemeContext = createContext({
   darkMode: false,
   toggleDarkMode: () => {}
 });
