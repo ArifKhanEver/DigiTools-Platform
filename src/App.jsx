@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import Workflow from './components/Workflow';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import CookieBanner from './components/CookieBanner';
 import DigitalTools from './components/DigitalTools/DigitalTools';
 
 const toolsData = fetch('/data.json').then(res => res.json());
@@ -63,6 +64,7 @@ function App() {
       </main>
       <Footer />
       <BackToTop />
+      <CookieBanner />
     </div>
     </ThemeProvider>
   );
