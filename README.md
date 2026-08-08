@@ -2,6 +2,8 @@
 
 A modern, high-performance, and responsive web application designed to provide a seamless digital marketplace experience. DigiTools enables creators, developers, and businesses to explore, search, filter, and acquire curated digital assets and AI tools.
 
+> **v2.0** — Major update with animated counter, testimonials carousel, newsletter section, cookie consent, features grid, custom hooks (useScrollReveal, useLocalStorage, useDebounce), skeleton loading, and enhanced accessibility.
+
 ---
 
 ## 📸 Overview & Live Demo
