@@ -17,7 +17,12 @@ import { SkeletonGrid } from './components/SkeletonCard';
 import ErrorBoundary from './components/ErrorBoundary';
 import DigitalTools from './components/DigitalTools/DigitalTools';
 
-const toolsData = fetch('/data.json').then(res => res.json());
+const toolsData = fetch('/data.json')
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  })
+  .catch(() => []);
 
 function App() {
   const [selectedTools, setSelectedTools] = useState([]);
