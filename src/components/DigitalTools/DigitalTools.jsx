@@ -40,7 +40,7 @@ const DigitalTools = ({ toolsData, selectedTools = [], setSelectedTools, activeT
         }
 
         return result;
-    }, [tools, selectedCategory, searchQuery, sortBy]);
+    }, [tools, selectedCategory, debouncedSearch, sortBy]);
 
     const handleResetFilters = () => {
         setSearchQuery('');
