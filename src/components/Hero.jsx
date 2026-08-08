@@ -51,6 +51,10 @@ const Hero = () => {
                 <img
                     src={heroImage}
                     alt="Digitools Platform Hero"
+                    loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={480}
                     className='max-w-full h-auto drop-shadow-xl rounded-2xl transition-transform duration-500 hover:scale-[1.02]'
                 />
             </div>
