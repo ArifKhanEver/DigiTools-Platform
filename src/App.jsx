@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Counter from './components/Counter';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
+import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Workflow from './components/Workflow';
 import Footer from './components/Footer';
@@ -52,6 +53,7 @@ function App() {
 
         <Steps />
         <Pricing />
+        <Testimonials />
         <FAQ />
         <Workflow />
       </main>
