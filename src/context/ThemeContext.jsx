@@ -22,6 +22,16 @@ export const ThemeProvider = ({ children }) => {
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
+  // Listen for changes in system color scheme preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => setDarkMode(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   return (
