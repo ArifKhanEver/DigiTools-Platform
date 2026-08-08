@@ -1,4 +1,5 @@
 import React, { use, useState, useMemo } from 'react';
+import useDebounce from '../../hooks/useDebounce';
 import AllTools from './AllTools';
 import SelectedTools from './SelectedTools';
 
@@ -6,6 +7,7 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
     const rawTools = use(toolsData);
     const tools = useMemo(() => rawTools || [], [rawTools]);
     const [searchQuery, setSearchQuery] = useState('');
+    const debouncedSearch = useDebounce(searchQuery, 280);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [sortBy, setSortBy] = useState('featured');
 
@@ -24,8 +26,8 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
         let result = tools.filter(tool => {
             const matchesCategory = selectedCategory === 'All' || tool.tag === selectedCategory;
             const matchesSearch =
-                tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (tool.description && tool.description.toLowerCase().includes(searchQuery.toLowerCase()));
+                tool.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                (tool.description && tool.description.toLowerCase().includes(debouncedSearch.toLowerCase()));
             return matchesCategory && matchesSearch;
         });
 
