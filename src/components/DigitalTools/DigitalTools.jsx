@@ -3,9 +3,9 @@ import useDebounce from '../../hooks/useDebounce';
 import AllTools from './AllTools';
 import SelectedTools from './SelectedTools';
 
-const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = "Products", setActiveTab }) => {
-    const rawTools = use(toolsData);
-    const tools = useMemo(() => rawTools || [], [rawTools]);
+const DigitalTools = ({ toolsData, selectedTools = [], setSelectedTools, activeTab = "Products", setActiveTab }) => {
+    const rawTools = toolsData && typeof toolsData.then === 'function' ? use(toolsData) : toolsData;
+    const tools = useMemo(() => (Array.isArray(rawTools) ? rawTools : []), [rawTools]);
     const [searchQuery, setSearchQuery] = useState('');
     const debouncedSearch = useDebounce(searchQuery, 280);
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -71,7 +71,7 @@ const DigitalTools = ({ toolsData, selectedTools, setSelectedTools, activeTab = 
                                     : "bg-transparent text-gray-700 hover:text-[#4F39F6] hover:bg-white/60 shadow-none"
                             }`}
                         >
-                            All Products ({rawTools.length})
+                            All Products ({tools.length})
                         </button>
                         <button
                             onClick={() => handleToggle('Cart')}
