@@ -13,6 +13,7 @@ import Workflow from './components/Workflow';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CookieBanner from './components/CookieBanner';
+import { SkeletonGrid } from './components/SkeletonCard';
 import DigitalTools from './components/DigitalTools/DigitalTools';
 
 const toolsData = fetch('/data.json').then(res => res.json());
@@ -42,8 +43,8 @@ function App() {
         <Features />
 
         <Suspense fallback={
-          <div className="flex justify-center items-center py-24">
-            <span className="loading loading-dots loading-lg text-[#4F39F6]"></span>
+          <div className="max-w-[90%] md:max-w-[1200px] mx-auto py-14">
+            <SkeletonGrid count={6} />
           </div>
         }>
           <DigitalTools
