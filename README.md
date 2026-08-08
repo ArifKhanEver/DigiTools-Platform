@@ -220,5 +220,5 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ---
 
 <div align="center">
-  <sub>Crafted with ❤️ by <a href="https://github.com/ArifKhanEver"><b>Arif Khan</b></a></sub>
+  <sub>Crafted with ❤️ by <a href="https://github.com/ArifKhanEver"><b>Shafiqul Islam Khan</b></a></sub>
 </div>
