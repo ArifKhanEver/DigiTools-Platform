@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Counter from './components/Counter';
+import Features from './components/Features';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
@@ -37,6 +38,7 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <Counter />
+        <Features />
 
         <Suspense fallback={
           <div className="flex justify-center items-center py-24">
