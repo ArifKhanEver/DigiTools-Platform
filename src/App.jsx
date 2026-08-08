@@ -6,6 +6,7 @@ import Counter from './components/Counter';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
+import Newsletter from './components/Newsletter';
 import FAQ from './components/FAQ';
 import Workflow from './components/Workflow';
 import Footer from './components/Footer';
@@ -54,6 +55,7 @@ function App() {
         <Steps />
         <Pricing />
         <Testimonials />
+        <Newsletter />
         <FAQ />
         <Workflow />
       </main>
