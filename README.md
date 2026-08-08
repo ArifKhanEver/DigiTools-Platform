@@ -27,7 +27,7 @@
 
   <p align="center">
     <a href="#-key-features"><b>Key Features</b></a> •
-    <a href="#-live-demo"><b>Live Demo</b></a> •
+    <a href="https://digitools-platform-zeta.vercel.app"><b>Live Demo</b></a> •
     <a href="#-tech-stack"><b>Tech Stack</b></a> •
     <a href="#-architecture"><b>Architecture</b></a> •
     <a href="#-getting-started"><b>Getting Started</b></a> •
