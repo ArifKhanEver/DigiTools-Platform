@@ -11,6 +11,7 @@ import { useState, useEffect, useCallback } from 'react';
 const useLocalStorage = (key, initialValue) => {
     const readValue = useCallback(() => {
         try {
+            if (typeof window === 'undefined') return initialValue;
             const item = window.localStorage.getItem(key);
             return item !== null ? JSON.parse(item) : initialValue;
         } catch {

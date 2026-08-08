@@ -6,11 +6,14 @@ const ThemeContext = createContext({
   toggleDarkMode: () => {}
 });
 
+/** Safely detect system dark mode preference */
+const prefersDark = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useLocalStorage(
-    'darkMode',
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
+  const [darkMode, setDarkMode] = useLocalStorage('darkMode', prefersDark());
 
   useEffect(() => {
     const root = document.documentElement;
@@ -25,6 +28,7 @@ export const ThemeProvider = ({ children }) => {
 
   // Listen for system preference changes
   useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e) => setDarkMode(e.matches);
     mediaQuery.addEventListener('change', handleChange);

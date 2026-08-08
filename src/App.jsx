@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CookieBanner from './components/CookieBanner';
 import { SkeletonGrid } from './components/SkeletonCard';
+import ErrorBoundary from './components/ErrorBoundary';
 import DigitalTools from './components/DigitalTools/DigitalTools';
 
 const toolsData = fetch('/data.json').then(res => res.json());
@@ -42,19 +43,21 @@ function App() {
         <Counter />
         <Features />
 
-        <Suspense fallback={
-          <div className="max-w-[90%] md:max-w-[1200px] mx-auto py-14">
-            <SkeletonGrid count={6} />
-          </div>
-        }>
-          <DigitalTools
-            toolsData={toolsData}
-            selectedTools={selectedTools}
-            setSelectedTools={setSelectedTools}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={
+            <div className="max-w-[90%] md:max-w-[1200px] mx-auto py-14">
+              <SkeletonGrid count={6} />
+            </div>
+          }>
+            <DigitalTools
+              toolsData={toolsData}
+              selectedTools={selectedTools}
+              setSelectedTools={setSelectedTools}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+          </Suspense>
+        </ErrorBoundary>
 
         <Steps />
         <Pricing />
