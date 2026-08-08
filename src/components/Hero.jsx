@@ -1,8 +1,7 @@
-import React from 'react';
 import heroImage from '../assets/banner.png';
 import ai from '../assets/AiTool.png';
-import playBtn from '../assets/Play.png';
 import { toast } from 'react-toastify';
+import CTAButton from './CTAButton';
 
 const Hero = () => {
     const handleWatchDemo = () => {
@@ -25,12 +24,9 @@ const Hero = () => {
                     Access premium AI tools, design assets, templates, and productivity software—all in one place. Start creating faster today.
                 </p>
                 <div className='flex flex-wrap gap-4 pt-2'>
-                    <a
-                        href="#products"
-                        className="btn btn-primary rounded-full px-8 bg-linear-to-r from-[#4F39F6] to-[#9514FA] border-none text-white hover:opacity-95 hover:scale-105 hover:shadow-lg transition-all shadow-md active:scale-95 cursor-pointer"
-                    >
+                    <CTAButton to="#products" className="rounded-full px-8 bg-linear-to-r from-[#4F39F6] to-[#9514FA] border-none text-white hover:opacity-95 hover:scale-105 hover:shadow-lg transition-all shadow-md active:scale-95">
                         Explore Products
-                    </a>
+                    </CTAButton>
                     <button
                         onClick={handleWatchDemo}
                         className="btn btn-outline border-[#4F39F6] text-[#4F39F6] hover:bg-[#4F39F6] hover:text-white hover:border-[#4F39F6] rounded-full px-6 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer group"

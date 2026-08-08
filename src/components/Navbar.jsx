@@ -1,6 +1,7 @@
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 import NavLink from './NavLink';
+import logo from '../assets/DigiTools.png';
 import cart from '../assets/shopping-cart.png';
 import { toast } from 'react-toastify';
 

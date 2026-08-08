@@ -6,6 +6,12 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #111827;
 }
 
 ::selection {
@@ -29,18 +35,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
-}
-
-:root {
-  color-scheme: light !important;
-}
-
-html, body {
-  background-color: white !important;
-  color: black !important;
-}
-
-.dark, [data-theme='dark'] {
-  background-color: white !important;
-  color: black !important;
 }
