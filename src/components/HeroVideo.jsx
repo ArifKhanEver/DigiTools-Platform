@@ -11,6 +11,7 @@ const HeroVideo = ({ src = '#', poster = '' }) => {
     <video
       className="w-full max-w-[600px] rounded-xl shadow-lg"
       controls
+      preload="metadata"
       poster={poster}
     >
       <source src={src} type="video/mp4" />
