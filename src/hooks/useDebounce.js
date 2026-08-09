@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
  * Delays updating the returned value until after `delay` ms of no changes.
  * Useful for search inputs to reduce unnecessary re-renders or API calls.
  *
- * @param {any} value - The value to debounce
+ * @template T
+ * @param {T} value - The value to debounce
  * @param {number} delay - Delay in milliseconds (default 300)
- * @returns {any} The debounced value
+ * @returns {T} The debounced value
  */
 const useDebounce = (value, delay = 300) => {
     const [debouncedValue, setDebouncedValue] = useState(value);
