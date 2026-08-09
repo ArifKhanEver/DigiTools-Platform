@@ -29,6 +29,7 @@ const BackToTop = () => {
         <button
             onClick={scrollToTop}
             aria-label="Scroll back to top"
+            title="Scroll back to top"
             className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 cursor-pointer group"
         >
             <svg
