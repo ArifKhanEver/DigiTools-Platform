@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 
+// Global toast context
 export const ToastContext = createContext(null);
 
 export const useToast = () => useContext(ToastContext);
