@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+// Array of user testimonials
 const testimonials = [
     {
         name: 'Sarah Chen',
