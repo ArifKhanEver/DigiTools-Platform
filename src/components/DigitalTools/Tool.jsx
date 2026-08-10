@@ -75,7 +75,7 @@ const Tool = ({ tool, selectedTools, setSelectedTools }) => {
                     <button
                         onClick={handleAddToCart}
                         disabled={isAdded}
-                        aria-label={isAdded ? `${tool.name} is already in cart` : `Add ${tool.name} to cart`}
+                        aria-label={isAdded ? `${tool.name} is already in your cart` : `Add ${tool.name} to cart`}
                         className={`btn btn-block rounded-full font-semibold transition-all duration-200 ${
                             isAdded
                                 ? "bg-emerald-50 text-emerald-700 font-bold border border-emerald-200 cursor-not-allowed shadow-none"
