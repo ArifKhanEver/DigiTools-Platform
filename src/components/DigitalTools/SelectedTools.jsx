@@ -98,7 +98,7 @@ const SelectedTools = ({ selectedTools, setSelectedTools, onBrowseClick }) => {
                         </div>
                         <h4 className='text-xl font-bold text-gray-700'>Your Cart is Empty</h4>
                         <p className='text-gray-500 max-w-sm mx-auto text-sm'>
-                            Explore our premium catalog to discover AI tools, boilerplates, and design kits.
+                            Explore our premium catalog today to discover AI tools, boilerplates, and design kits.
                         </p>
                         {onBrowseClick && (
                             <button
