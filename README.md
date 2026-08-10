@@ -41,7 +41,7 @@
 
 ## 🌟 Overview
 
-**DigiTools** is a curated digital marketplace and discovery platform designed for software engineers, product designers, content creators, and modern digital entrepreneurs. 
+**DigiTools** is a curated digital marketplace and discovery platform designed for software engineers, product designers, content creators, and modern digital entrepreneurs worldwide. 
 
 Engineered with performance and aesthetics at its core, DigiTools delivers instant filtering, live debounced search, rich product catalog management, interactive shopping cart with promo coupon discounting, dark/light theme switching, and smooth micro-interactions.
 
