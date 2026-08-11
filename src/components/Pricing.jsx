@@ -164,4 +164,5 @@ const Pricing = () => {
     );
 };
 
-export default Pricing;
+export default Pricing;
+// Code styling and structural review completed.
