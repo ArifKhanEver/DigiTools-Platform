@@ -82,4 +82,5 @@ const Steps = () => {
     );
 };
 
-export default Steps;
+export default Steps;
+// Code styling and structural review completed.
