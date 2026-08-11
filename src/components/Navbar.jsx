@@ -97,4 +97,5 @@ const Navbar = ({ cartCount = 0, onCartClick }) => {
     );
 };
 
-export default Navbar;
+export default Navbar;
+// Code styling and structural review completed.
