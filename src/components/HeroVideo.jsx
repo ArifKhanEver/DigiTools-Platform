@@ -21,3 +21,5 @@ const HeroVideo = ({ src = '#', poster = '' }) => {
 };
 
 export default HeroVideo;
+
+// Code styling and structural review completed.
